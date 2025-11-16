@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/90 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md p-6;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-batsman {
+    @apply bg-blue-100 text-blue-800;
+  }
+
+  .badge-bowler {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .badge-allrounder {
+    @apply bg-purple-100 text-purple-800;
+  }
+
+  .badge-wicketkeeper {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+}
+
+@layer utilities {
+  .animate-bid-update {
+    animation: bidPulse 0.5s ease-in-out;
+  }
+
+  @keyframes bidPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .player-avatar {
+    @apply object-cover object-center;
+    image-rendering: -webkit-optimize-contrast;
+  }
+
+  .player-avatar-sm {
+    @apply w-full h-full object-cover object-top;
+  }
+
+  .player-avatar-md {
+    @apply w-full h-full object-cover object-top;
+  }
+
+  .player-avatar-lg {
+    @apply w-full h-full object-cover object-top;
+  }
+}
+
+/* Fix for high-resolution images in small containers */
+.avatar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transform: scale(1.2);
+}
+
+/* Mobile-friendly improvements */
+@media (max-width: 768px) {
+  .input-field {
+    @apply text-base py-3;
+  }
+
+  .btn-primary, .btn-secondary {
+    @apply text-sm;
+  }
+
+  /* Ensure modals are full width on mobile */
+  .modal-content {
+    @apply w-full max-w-full mx-2;
+  }
+}
+
+/* Touch-friendly tap targets */
+@media (pointer: coarse) {
+  button,
+  select,
+  input[type="checkbox"],
+  input[type="radio"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .card {
+    @apply p-4;
+  }
+}
