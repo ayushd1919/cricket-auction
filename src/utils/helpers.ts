@@ -16,8 +16,6 @@ export function getRoleBadgeClass(role: string): string {
       return 'badge-bowler';
     case PLAYER_ROLES.ALL_ROUNDER:
       return 'badge-allrounder';
-    case PLAYER_ROLES.WICKET_KEEPER:
-      return 'badge-wicketkeeper';
     default:
       return 'bg-gray-100 text-gray-800';
   }
